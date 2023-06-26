@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "first",
+    "coordinates": {
+      "x": -5,
+      "y": 56.0
+    },
+    "creationDate": "2023-04-27T22:56:12.288646500",
+    "health": 67.0,
+    "achievements": "hj",
+    "weaponType": null,
+    "meleeWeapon": null,
+    "chapter": {
+      "name": "h",
+      "parentLegion": null,
+      "world": "f"
+    }
+  },
+  {
+    "id": 550589586,
+    "name": "gg",
+    "coordinates": {
+      "x": 66,
+      "y": 99.0
+    },
+    "creationDate": "2023-04-28T18:15:05.766864600",
+    "health": 88.0,
+    "achievements": "gh",
+    "weaponType": null,
+    "meleeWeapon": null,
+    "chapter": {
+      "name": "s",
+      "parentLegion": null,
+      "world": null
+    }
+  },
+  {
+    "id": 1345225308,
+    "name": "hh",
+    "coordinates": {
+      "x": 5,
+      "y": 56.0
+    },
+    "creationDate": "2023-04-28T18:20:01.479058100",
+    "health": 77.0,
+    "achievements": "h",
+    "weaponType": null,
+    "meleeWeapon": null,
+    "chapter": {
+      "name": "s",
+      "parentLegion": "s",
+      "world": null
+    }
+  },
+  {
+    "id": 14678,
+    "name": "first",
+    "coordinates": {
+      "x": -5,
+      "y": 56.0
+    },
+    "creationDate": "2023-04-27T22:56:12.288646505",
+    "health": 67.0,
+    "achievements": "hj",
+    "weaponType": null,
+    "meleeWeapon": null,
+    "chapter": {
+      "name": "h",
+      "parentLegion": null,
+      "world": "f"
+    }
+  }
+]

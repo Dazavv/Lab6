@@ -35,24 +35,17 @@ public class Client {
     public Response sendAndAskResponse(Request request) throws IOException {
         while (true) {
             try {
-                if(Objects.isNull(serverWriter) || Objects.isNull(serverReader)) throw new IOException();
+                if (Objects.isNull(serverWriter) || Objects.isNull(serverReader)) {
+                    connectToServer();
+                }
                 if (request.isEmpty()) return new Response(ResponseStatus.WRONG_ARGUMENTS, "Запрос пустой!");
                 serverWriter.writeObject(request);
                 serverWriter.flush();
                 Response response = (Response) serverReader.readObject();
-                //this.disconnectFromServer();//на этом моменте разрывает соединение
                 reconnectionAttempts = 0;
                 return response;
             } catch (IOException e) {
-                if (reconnectionAttempts == 0){
-                    connectToServer();
-                    connectToServer();
-                    reconnectionAttempts++;
-                    continue;
-                } else {
-                    console.printError("Соединение с сервером разорвано\n");
-                    //disconnectFromServer();
-                }
+                console.printError("Соединение с сервером разорвано\n");
                 try {
                     reconnectionAttempts++;
                     if (reconnectionAttempts >= maxReconnectionAttempts) {
@@ -61,15 +54,13 @@ public class Client {
                     }
                     console.write("Повторная попытка через " + reconnectionTimeout / 1000 + " секунд\n");
                     Thread.sleep(reconnectionTimeout);
-                    connectToServer();
+                    connectToServer(); // Повторное подключение к серверу
                 } catch (Exception exception) {
                     console.printError("Попытка соединения с сервером неуспешна\n");
                 }
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-            if (socket != null) socket.close();
-            console.write("Работа клиента завершена\n");
         }
     }
 

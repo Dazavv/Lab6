@@ -1,6 +1,6 @@
 package me.dasha.lab6.collectionClasses;
 
-
+import java.io.Serializable;
 import me.dasha.lab6.utility.Validator;
 
 /**

@@ -6,7 +6,7 @@ import me.dasha.lab6.utility.Validator;
 /**
  * The class with spaceMarine's chapter
  */
-public class Chapter implements Validator {
+public class Chapter implements Validator, Serializable {
 
     private String name; //Поле не может быть null, Строка не может быть пустой
 

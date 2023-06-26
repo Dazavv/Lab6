@@ -1,13 +1,13 @@
 package me.dasha.lab6.collectionClasses;
 
 import me.dasha.lab6.utility.Validator;
-
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * The class with spaceMarine's coordinates
  */
-public class Coordinates implements Validator {
+public class Coordinates implements Validator, Serializable {
 
     private int x; //Значение поля должно быть больше -623
 
